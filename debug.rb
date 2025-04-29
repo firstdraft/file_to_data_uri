@@ -6,9 +6,15 @@ Tempfile.create(["test", ".txt"]) do |file|
   file.write("Hello, world!")
   file.flush
 
-  data_uri = DataURI.new(file.path)
-  encoded = "data:text/plain;base64,#{Base64.strict_encode64('Hello, world\!')}"
+  result = DataURI.convert(file.path)
+  encoded = "data:text/plain;base64,#{Base64.strict_encode64("Hello, world!")}"
 
-  puts "Actual:   #{data_uri}"
+  puts "Actual:   #{result}"
+  puts "Expected: #{encoded}"
+
+  # Also verify legacy API
+  legacy_result = DataURI.new(file.path).to_s
+  puts "\nLegacy API:"
+  puts "Actual:   #{legacy_result}"
   puts "Expected: #{encoded}"
 end

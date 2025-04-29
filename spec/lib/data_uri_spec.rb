@@ -8,6 +8,35 @@ RSpec.describe DataURI do
   let(:test_image_path) { SPEC_ROOT.join("fixtures/images/test1.jpg") }
   let(:expected_data_uri) { File.read(SPEC_ROOT.join("fixtures/images/test1.txt")).strip }
 
+  describe ".convert" do
+    it "converts a file path as a string to data URI" do
+      result = DataURI.convert(test_image_path.to_s)
+      expect(result).to eq(expected_data_uri)
+    end
+
+    it "converts a file path as a Pathname to data URI" do
+      result = DataURI.convert(test_image_path)
+      expect(result).to eq(expected_data_uri)
+    end
+
+    it "converts a File object to data URI" do
+      File.open(test_image_path, "rb") do |file|
+        result = DataURI.convert(file)
+        expect(result).to eq(expected_data_uri)
+      end
+    end
+
+    it "converts any object that responds to #read to data URI" do
+      file_like_object = double("file-like")
+      allow(file_like_object).to receive(:read).and_return("test content")
+      allow(file_like_object).to receive(:rewind)
+
+      result = DataURI.convert(file_like_object)
+      expected = "data:application/octet-stream;base64,#{Base64.strict_encode64("test content")}"
+      expect(result).to eq(expected)
+    end
+  end
+
   describe "#initialize" do
     it "accepts a file path as a string" do
       expect { DataURI.new(test_image_path.to_s) }.not_to raise_error

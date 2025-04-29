@@ -30,16 +30,22 @@ gem install file_to_data_uri
 
 ```ruby
 # With a file path
-data_uri = DataURI.new("path/to/image.jpg")
-data_uri.to_s # => "data:image/jpeg;base64,..."
+data_uri = DataURI.convert("path/to/image.jpg") # => "data:image/jpeg;base64,..."
 
 # With a file-like object (anything that responds to `read`)
 file = File.open("image.png")
-data_uri = DataURI.new(file)
-data_uri.to_s # => "data:image/png;base64,..."
+data_uri = DataURI.convert(file) # => "data:image/png;base64,..."
 
 # Direct use in HTML
-# <img src="<%= DataURI.new('logo.png').to_s %>">
+# <img src="<%= DataURI.convert('logo.png') %>">
+```
+
+### Legacy Usage (still supported)
+
+```ruby
+# With a file path
+data_uri = DataURI.new("path/to/image.jpg")
+data_uri.to_s # => "data:image/jpeg;base64,..."
 ```
 
 ### Supported Input Types

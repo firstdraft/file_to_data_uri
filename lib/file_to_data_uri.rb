@@ -6,6 +6,14 @@ require_relative "file_to_data_uri/version"
 
 # DataURI class for generating data URIs from files or file-like objects
 class DataURI
+  # Convert a file path or file-like object to a data URI string
+  #
+  # @param source [String, #read] File path or file-like object
+  # @return [String] A data URI representation of the file
+  def self.convert(source)
+    new(source).to_s
+  end
+
   # Initialize with a file path or file-like object
   #
   # @param source [String, #read] File path or file-like object
@@ -52,9 +60,9 @@ class DataURI
     elsif @source.respond_to?(:path) && @source.path
       # If it's a file object with a path
       mime_from_path(@source.path)
-    elsif @source.is_a?(String)
-      # If it's a file path as string
-      mime_from_path(@source)
+    elsif @source.is_a?(String) || @source.respond_to?(:to_s)
+      # If it's a file path as string or can be converted to string (like Pathname)
+      mime_from_path(@source.to_s)
     else
       # Default to octet-stream if we can't determine
       "application/octet-stream"
