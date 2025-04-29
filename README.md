@@ -30,7 +30,7 @@ gem install file_to_data_uri
 
 ```ruby
 # With a file path
-data_uri = DataURI.convert("path/to/image.jpg") # => "data:image/jpeg;base64,..."
+@data_uri = DataURI.convert("path/to/image.jpg") # => "data:image/jpeg;base64,..."
 
 # With a file-like object, e.g. an uploaded file
 @data_uri = DataURI.convert(params[:image]) # => "data:image/png;base64,..."
