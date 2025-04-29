@@ -32,12 +32,11 @@ gem install file_to_data_uri
 # With a file path
 data_uri = DataURI.convert("path/to/image.jpg") # => "data:image/jpeg;base64,..."
 
-# With a file-like object (anything that responds to `read`)
-file = File.open("image.png")
-data_uri = DataURI.convert(file) # => "data:image/png;base64,..."
+# With a file-like object, e.g. an uploaded file
+@data_uri = DataURI.convert(params[:image]) # => "data:image/png;base64,..."
 
-# Direct use in HTML
-# <img src="<%= DataURI.convert('logo.png') %>">
+# Then you can use it in an ERB template
+# <img src="<%= @data_uri %>">
 ```
 
 ### Supported Input Types
