@@ -4,7 +4,7 @@ require "simplecov"
 
 unless ENV["NO_COVERAGE"]
   SimpleCov.start do
-    add_filter %r(^/spec/)
+    add_filter %r{^/spec/}
     enable_coverage :branch
     enable_coverage_for_eval
     minimum_coverage_by_file line: 95, branch: 95
@@ -27,7 +27,7 @@ RSpec.configure do |config|
   config.disable_monkey_patching!
   config.example_status_persistence_file_path = "./tmp/rspec-examples.txt"
   config.filter_run_when_matching :focus
-  config.formatter = ENV.fetch("CI", false) == "true" ? :progress : :documentation
+  config.formatter = (ENV.fetch("CI", false) == "true") ? :progress : :documentation
   config.order = :random
   config.pending_failure_output = :no_backtrace
   config.shared_context_metadata_behavior = :apply_to_host_groups

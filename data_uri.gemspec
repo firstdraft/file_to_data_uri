@@ -22,9 +22,11 @@ Gem::Specification.new do |spec|
   spec.signing_key = Gem.default_key_path
   spec.cert_chain = [Gem.default_cert_path]
 
-  spec.required_ruby_version = "~> 3.4"
-  spec.add_dependency "refinements", "~> 13.0"
-  spec.add_dependency "zeitwerk", "~> 2.7"
+  spec.required_ruby_version = ">= 2.0.0"
+  spec.add_runtime_dependency "mime-types", "~> 3.0"
+  spec.add_runtime_dependency "base64", ">= 0.1.0"
+
+  spec.add_development_dependency "standard", "~> 1.0"
 
   spec.extra_rdoc_files = Dir["README*", "LICENSE*"]
   spec.files = Dir["*.gemspec", "lib/**/*"]
