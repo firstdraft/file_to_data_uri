@@ -1,4 +1,4 @@
-# DataURI
+# FileToDataURI
 
 A Ruby gem that converts files or file-like objects to data URI strings suitable for use in HTML elements.
 
@@ -9,7 +9,7 @@ A Ruby gem that converts files or file-like objects to data URI strings suitable
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "data_uri", "< 1.0.0"
+gem "file_to_data_uri", "< 1.0.0"
 ```
 
 And then, at a command prompt:
@@ -23,7 +23,7 @@ bundle install
 Or, install it directly with:
 
 ```
-gem install data_uri
+gem install file_to_data_uri
 ```
 
 ## Usage

@@ -1,4 +1,4 @@
-require_relative "lib/data_uri"
+require_relative "lib/file_to_data_uri"
 require "base64"
 require "tempfile"
 

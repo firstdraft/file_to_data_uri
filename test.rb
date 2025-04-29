@@ -1,4 +1,4 @@
-require_relative "lib/data_uri"
+require_relative "lib/file_to_data_uri"
 
 # Test with the test1.jpg file
 jpg_path = File.join(__dir__, "spec/fixtures/images/test1.jpg")

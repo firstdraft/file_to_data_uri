@@ -13,7 +13,7 @@ end
 
 Bundler.require :tools
 
-require "data_uri"
+require "file_to_data_uri"
 require "refinements"
 
 SPEC_ROOT = Pathname(__dir__).realpath.freeze
