@@ -1,4 +1,4 @@
-# FileToDataURI
+# file_to_data_uri
 
 A Ruby gem that converts files or file-like objects to data URI strings (e.g. image files to strings suitable for use as the `src` of an `<img>`).
 
