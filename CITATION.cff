@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: Please use the following metadata when citing this project in your work.
-title: DataURI
+title: FileToDataURI
 abstract: A Ruby gem that converts files or file-like objects to data URI strings suitable for use in HTML elements.
-version: 0.1.0
+version: 0.0.1
 license: MIT
 date-released: 2025-04-29
 authors:
@@ -15,6 +15,6 @@ keywords:
  - data-uri
  - base64
  - html
-repository-code: https://github.com/firstdraft/data_uri
-repository-artifact: https://rubygems.org/gems/data_uri
-url: https://github.com/firstdraft/data_uri
+repository-code: https://github.com/firstdraft/file_to_data_uri
+repository-artifact: https://rubygems.org/gems/file_to_data_uri
+url: https://github.com/firstdraft/file_to_data_uri
