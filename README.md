@@ -1,6 +1,6 @@
 # file_to_data_uri
 
-A Ruby gem that converts files or file-like objects to data URI strings (e.g. image files to strings suitable for use as the `src` of an `<img>`).
+A Ruby gem that converts files or file-like objects to [data URI](https://en.wikipedia.org/wiki/Data_URI_scheme) strings (e.g. image files to strings suitable for use as the `src` of an `<img>`).
 
 ## Installation
 
