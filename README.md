@@ -1,6 +1,6 @@
 # FileToDataURI
 
-A Ruby gem that converts files or file-like objects to data URI strings suitable for use in HTML elements.
+A Ruby gem that converts files or file-like objects to data URI strings (e.g. image files to strings suitable for use as the `src` of an `<img>`).
 
 ## Installation
 
@@ -40,17 +40,9 @@ data_uri = DataURI.convert(file) # => "data:image/png;base64,..."
 # <img src="<%= DataURI.convert('logo.png') %>">
 ```
 
-### Legacy Usage (still supported)
-
-```ruby
-# With a file path
-data_uri = DataURI.new("path/to/image.jpg")
-data_uri.to_s # => "data:image/jpeg;base64,..."
-```
-
 ### Supported Input Types
 
-- **File paths**: Pass a string with a path to a local image file.
+- **File paths**: Pass a string with a path to a local file.
 - **File-like objects**: Pass an object that responds to `read` (like `File.open("image.jpg")` or a Rails uploaded file).
 
 ## License
