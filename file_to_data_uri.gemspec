@@ -24,11 +24,9 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 2.0.0"
   spec.add_runtime_dependency "mime-types", "~> 3.0"
-  spec.add_runtime_dependency "base64", ">= 0.1.0"
+  spec.add_runtime_dependency "base64", "~> 0.1", ">= 0.1.0"
 
-  spec.add_development_dependency "standard", "~> 1.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rake", "~> 13.0"
+  # All development dependencies are specified in the Gemfile
 
   spec.extra_rdoc_files = Dir["README*", "LICENSE*", "CHANGELOG*"]
   spec.files = Dir["*.gemspec", "lib/**/*"]

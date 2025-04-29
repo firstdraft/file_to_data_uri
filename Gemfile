@@ -4,13 +4,14 @@ ruby file: ".ruby-version"
 
 source "https://rubygems.org"
 
-gemspec
+gemspec name: "file_to_data_uri"
 
 group :quality do
   gem "caliber", "~> 0.79"
   gem "git-lint", "~> 9.0"
   gem "reek", "~> 6.5", require: false
   gem "simplecov", "~> 0.22", require: false
+  gem "standard", "~> 1.0"
 end
 
 group :development do
