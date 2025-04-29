@@ -2,6 +2,7 @@
 
 require "base64"
 require "mime/types"
+require_relative "data_uri/version"
 
 # DataURI class for generating data URIs from files or file-like objects
 class DataURI
